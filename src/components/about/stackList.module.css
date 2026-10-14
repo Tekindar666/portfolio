@@ -1,0 +1,83 @@
+.section {
+  margin-top: 64px;
+  line-height: 1.75;
+}
+
+.heading {
+  margin: 0 0 24px;
+  font-size: 1.125rem;
+  line-height: normal;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 28px;
+}
+
+.tab {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--color-text-secondary);
+  font: inherit;
+  font-size: 0.875rem;
+  text-underline-offset: 0.3em;
+  cursor: pointer;
+}
+
+.tab[aria-selected="true"] {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+.list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Keep hidden panels hidden even though the list uses display: grid. */
+.list[hidden] {
+  display: none;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 144px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 24px;
+}
+
+.link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: #777;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.link:hover,
+.link:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 640px) {
+  .item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}

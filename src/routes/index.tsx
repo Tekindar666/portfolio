@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import styles from "./AboutPage.module.css";
+import { StackList } from "../components/about/stackList";
 
 export const Route = createFileRoute("/")({
   component: AboutPage,
@@ -30,6 +31,11 @@ function AboutPage() {
           Business Information Systems.
         </p>
       </section>
+      <StackList />
+      <footer className={styles.footer}>
+        <a href="https://github.com/Tekindar666">GitHub</a>
+        <a href="https://www.linkedin.com/in/edward-j-tan/">LinkedIn</a>
+      </footer>
     </div>
   );
 }

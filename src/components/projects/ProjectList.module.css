@@ -1,0 +1,54 @@
+.projects {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.heading {
+  margin: 40px 0 24px;
+  color: var(--color-text);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.list {
+  margin: -8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 16px;
+  padding-block: 16px;
+  border-bottom: 1px solid #292929;
+}
+
+.project:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.name {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: #777;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.name:hover,
+.name:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 600px) {
+  .project {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}

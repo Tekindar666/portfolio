@@ -1,0 +1,28 @@
+.heading {
+  margin: 40px 0 24px;
+  font-size: 1.125rem;
+}
+
+section > .heading {
+  margin-top: 64px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid #292929;
+}
+
+.footer a {
+  color: var(--color-text);
+  text-decoration-color: #777;
+  text-underline-offset: 0.2em;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  text-decoration-color: currentColor;
+}

@@ -1,0 +1,66 @@
+.container {
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 128px 24px 48px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.header nav {
+  display: flex;
+  position: relative;
+  isolation: isolate;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header a.hover {
+  background-color: grey;
+}
+
+.header .name {
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+
+.header nav a {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  padding: 3.5px 10px;
+  border-radius: 999px;
+}
+
+/* data-status is a tanstack router exposed value */
+.header nav a[data-status="active"] {
+  color: var(--color-text);
+}
+
+.pill {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 60px;
+  border-radius: 999px;
+  background-color: #292929;
+  z-index: -1;
+  pointer-events: none;
+  transition:
+    transform 200ms ease,
+    width 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill {
+    transition: none;
+  }
+}

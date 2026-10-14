@@ -19,8 +19,7 @@ const projects = [
   {
     name: "LeetTrack",
     repository: "leettrack",
-    description:
-      "An AI-powered platform for planning and reviewing LeetCode practice.",
+    description: "A platform for planning and reviewing LeetCode practice.",
   },
   {
     name: "Meju",

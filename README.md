@@ -31,3 +31,26 @@ bun run preview
 - Oxlint enables correctness checks plus React Hooks, Fast Refresh, and accessibility rules.
   Warnings fail the lint command. Configuration lives in `.oxlintrc.json`.
 - Vite builds the site into `dist/`. CSS Modules work without an additional plugin.
+
+## Writing a blog post
+
+Create `src/blog/my-story/content.md` and `src/blog/my-story/info.json`:
+
+```json
+{
+  "title": "My Story",
+  "date": "2026-07-17",
+  "description": "How I got into building things."
+}
+```
+
+Use lowercase letters, numbers, and hyphens for folder names. The folder name
+becomes the URL: `/blog/my-story`. Posts appear at `/blog`, newest date first.
+Every folder is a published post; drafts and future-date scheduling are not supported.
+
+Write standard Markdown in `content.md`. The page already displays the title;
+start sections with `##`. Raw HTML is ignored. For images, place files under
+`public/images/` and reference them as `![Description](/images/example.png)`.
+
+Run `bun run dev` to preview. Commit both files and rebuild/deploy to publish
+changes.

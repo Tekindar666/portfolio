@@ -59,6 +59,14 @@
     width 200ms ease;
 }
 
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pill {
     transition: none;

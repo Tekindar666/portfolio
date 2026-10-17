@@ -83,6 +83,9 @@ function RootLayout() {
           <Link to="/projects" onPointerEnter={handleLinkPointerEnter}>
             Projects
           </Link>
+          <Link to="/blog" onPointerEnter={handleLinkPointerEnter}>
+            Blog
+          </Link>
         </nav>
       </header>
       <main>

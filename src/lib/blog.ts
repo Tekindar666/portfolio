@@ -9,6 +9,15 @@ const content = import.meta.glob<string>("../blog/*/content.md", {
   import: "default",
 });
 
+const assets = import.meta.glob<string>(
+  "../blog/*/assets/*.{png,jpg,jpeg,gif,webp,svg,avif}",
+  {
+    eager: true,
+    query: "?url",
+    import: "default",
+  },
+);
+
 function slugFromPath(path: string) {
   return path.split("/").at(-2)!;
 }
@@ -24,6 +33,14 @@ export function findPost(slug: string) {
   return posts.find((post) => post.slug === slug);
 }
 
-export function loadPostContent(slug: string) {
-  return content[`../blog/${slug}/content.md`]();
+export async function loadPostContent(slug: string) {
+  const markdown = await content[`../blog/${slug}/content.md`]();
+  return markdown.replace(
+    /(!\[[^\]]*\]\()(?:\.\/)?(assets\/[^\s)]+)(\))/g,
+    (_, opening: string, path: string, closing: string) => {
+      const url = assets[`../blog/${slug}/${path}`];
+      if (!url) throw new Error(`Blog post "${slug}": missing asset ${path}`);
+      return `${opening}${url}${closing}`;
+    },
+  );
 }
